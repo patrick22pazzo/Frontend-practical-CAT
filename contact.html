@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Contact - Bluebell</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f2f2f2;
+}
+
+/* Header */
+.header {
+  background: #0a1a6b;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+
+.header .logo {
+  text-align: center;
+  flex: 1;
+}
+
+/* Title */
+.title {
+  text-align: center;
+  padding: 15px;
+  font-size: 20px;
+}
+
+/* Layout */
+.contact-container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Form Card */
+.contact-card {
+  flex: 1;
+  max-width: 400px;
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+/* Inputs */
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  font-size: 13px;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+textarea {
+  height: 100px;
+}
+
+/* Button */
+.btn {
+  width: 100%;
+  padding: 12px;
+  background: #0a1a6b;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+/* Map Section */
+.map {
+  flex: 2;
+  border-radius: 20px;
+  overflow: hidden;
+  min-height: 350px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .contact-card {
+    max-width: 100%;
+  }
+
+  .map {
+    height: 300px;
+  }
+}
+
+/* Bottom Nav */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: white;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  border-top: 2px solid #ddd;
+}
+
+
+
+
+.social {
+  background: white;
+  padding: 15px;
+  text-align: center;
+  border-radius: 0 0 20px 20px;
+}
+
+.social h4 {
+  margin-bottom: 10px;
+  color: #0a1a6b;
+}
+
+.icons a {
+  font-size: 20px;
+  margin: 0 10px;
+  color: white;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+/* Brand Colors */
+.icons a:nth-child(1) { background: #1877f2; } /* Facebook */
+.icons a:nth-child(2) { background: #e4405f; } /* Instagram */
+.icons a:nth-child(3) { background: #1da1f2; } /* Twitter */
+.icons a:nth-child(4) { background: #0077b5; } /* LinkedIn */
+
+.icons a:hover {
+  transform: scale(1.2);
+}
+
+/* Navigation */
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 15px;
+  font-size: 14px;
+}
+
+.nav-links a:hover {
+  color: #a0b3ff;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Header -->
+<div class="header">
+  <div>☰</div>
+  <div class="logo">
+    <h3>BLUEBELL</h3>
+    <small>PC & ACCESSORIES</small>
+  </div>
+
+   <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="products.html">Products</a>
+    <a href="cart.html">Cart</a>
+    <a href="contact.html" class="active">Contact</a>
+  </div>
+  <div>🔍</div>
+</div>
+
+<div class="title">Contact Us</div>
+
+<!-- Main Layout -->
+<div class="contact-container">
+
+  <!-- Form -->
+  <div class="contact-card">
+
+    <div class="input-group">
+      <label>Name</label>
+      <input type="text" placeholder="Your name">
+    </div>
+
+    <div class="input-group">
+      <label>Email</label>
+      <input type="email" placeholder="Your email">
+    </div>
+
+    <div class="input-group">
+      <label>Message</label>
+      <textarea placeholder="Your message"></textarea>
+    </div>
+
+    <button class="btn">Send Message</button>
+
+  </div>
+
+  <!-- Map -->
+  <div class="map">
+    <iframe 
+      src="https://maps.google.com/maps?q=Kigali&t=&z=13&ie=UTF8&iwloc=&output=embed"
+      width="100%" 
+      height="100%" 
+      style="border:0;">
+    </iframe>
+  </div>
+
+  <!-- Social Media -->
+  <div class="social">
+    <h4>Follow Us</h4>
+    <div class="icons">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- Bottom Nav -->
+<div class="bottom-nav">
+  <div onclick="location.href='home.html'">🏠</div>
+  <div>❤</div>
+  <div>📄</div>
+  <div>👤</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,258 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-align: center;
+    color: blue;
+    background: linear-gradient((0,0,0,0.7)),url(hotel\ 1.jpg);
+    
+}
+
+
+body{
+    background-color: aliceblue;
+}
+
+nav{
+    background-color: rgb(7, 86, 86);
+    height: 10vh;
+    padding-top: 10px;
+}
+ul li{
+    margin-left: 100px;
+    display: inline-block;
+
+}
+ li a{
+    display: flex;
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+}
+
+.container{
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+}
+
+.img{
+    width: 100%;
+    height: 120vh;
+    overlay: auto;
+}
+
+
+.login{
+    background-color: rgb(6, 115, 115);
+    width: 33%;
+    border-radius: 5px;
+    height: 50vh;
+    margin-left: 380px;
+    padding-top: 20px;
+}
+
+.login h3{
+    color:  white;
+    font-size: 17pt;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+.login input{
+    width: 70%;
+    margin-top: 20px;
+    background: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid rgb(21, 228, 21);
+    color: white;
+}
+
+input::placeholder{
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 12pt;
+    font-style: italic;
+}
+button{
+    background-color: chartreuse;
+    width: 40%;
+    height: 40px;
+    margin-top: 30px;
+    border-radius: 6px;
+    border: none;
+    color: white;
+    font-weight: 600;
+    font-size: 13pt;
+    
+}
+
+span{
+    color: chartreuse;
+}
+
+button:hover{
+border: 2px solid orangered;
+/* width: 50%; */
+transition: 3ms ease-in-out;
+transform: scale(2s);
+}
+.login label{
+    color: blue;
+    margin-top: 30px;
+}
+
+
+
+table{
+    width: 40%;
+    /* border: 1px solid green; */
+    margin-left: 380px;
+    padding-bottom: 20px;
+}
+td{
+    border-bottom: 1px solid green;
+    
+    text-align: center;
+}
+th{
+    background-color: rgb(19, 71, 71);
+    height: 5vh;
+    color: white;
+}
+
+.format{
+    background-color: green;
+    text-align: center;
+    border: 2px solid black;
+    padding: 10px;
+    width: 100%;
+}
+
+#tx_id{
+    text-decoration: underline;
+    text-align: center;
+    color: red;
+    cursor: pointer;
+}
+
+
+p{
+    text-align: center;
+    color: blue;
+
+}
+
+a:link{
+    color: blue;
+}
+a:visited{
+    color: purple;
+}
+
+p::first-line{
+    color: blue;
+}
+
+p::first-letter{
+    color: red;
+    font-size: 40px;
+}
+
+
+h1::before{
+    content: "this was inserted from css";
+    color: tomato;
+}
+
+
+a[href*="library"]{
+    color: tomato;
+}
+
+input[type="text"]{
+    /* background: #FF6347; */
+}
+
+
+
+.grid-layout{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 20px;
+    border: 20px solid black;
+}
+
+.welcome-box{
+    grid-column: 1/4;
+    background-color: lightblue;
+    padding: 15px;
+    border: 5px solid green;
+}
+
+.reg-form{
+    grid-column: 1/4;
+    border: 10px solid blue;
+    padding: 10px;
+    gap: 20px;
+}
+
+@media only screen and (max-width: 600px){
+    html,body{
+        background-color: green;
+        height: 100vh;
+        /* overflow: hidden; */
+        overflow-x: hidden;
+    }
+    
+    
+}
+
+@keyframes ani{
+    0%{background-color: red;}
+    25%{background-color: blue; color: black; color: yellow;}
+    30%{background-color: rgb(5, 225, 249); color: rgb(19, 191, 48); color: rgb(172, 86, 159);}
+    100%{background-color: green;}
+    
+
+}
+
+
+.anicontent{
+    border: 10px solid black;
+    color: red;
+    animation-name: ani;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+
+
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 6 equal columns */
+  gap: 10px;
+  max-width: 800px;
+  margin: 50px auto;
+}
+
+.box {
+  background-color: #e6f0fa;
+  border: 3px solid #5a9bd5;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Make "2" span across 2 columns */
+.span-2 {
+  grid-column: span 2;
+}

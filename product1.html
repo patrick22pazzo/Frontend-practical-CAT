@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Page</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #eef2f5;
+}
+
+/* HEADER */
+.header {
+    background: #0b1c6b;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    padding: 15px 40px;
+}
+
+.header .left,
+.header .right {
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.header .center {
+    text-align: center;
+    font-weight: bold;
+}
+
+/* MAIN LAYOUT */
+.main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: calc(100vh - 70px);
+}
+
+/* LEFT SIDE (IMAGE) */
+.left-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.shape {
+    position: absolute;
+    width: 350px;
+    height: 220px;
+    background: #3c4b8b;
+    border-radius: 50%;
+}
+
+.left-section img {
+    width: 400px;
+    z-index: 1;
+}
+
+/* RIGHT SIDE (DETAILS) */
+.right-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+}
+
+/* PRODUCT INFO */
+.stars {
+    color: gold;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.title {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+/* DETAILS CARD */
+.details {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    border: 2px solid #4a6cf7;
+    max-width: 500px;
+}
+
+.details h3 {
+    margin-bottom: 10px;
+}
+
+.details p {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* BUTTONS */
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-outline {
+    border: 2px solid #0b1c6b;
+    background: transparent;
+    color: #0b1c6b;
+}
+
+.btn-filled {
+    background: #0b1c6b;
+    color: white;
+}
+
+.arrow-btn {
+    position: absolute;
+    right: 60px;
+    top: 30%;
+    transform: translateY(-50%);
+    
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #dcdcdc;
+    border: 2px solid #0a1a6b;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    font-size: 22px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.arrow-btn:hover {
+    background: #0b1c6b;
+    color: white;
+}
+
+
+/* Floating Cart Button */
+.cart-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  border: 5px solid #0a1a6b;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+/* Bottom Nav */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: white;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  border-top: 2px solid #ddd;
+}
+
+.bottom-nav div {
+  font-size: 22px;
+  color: #555;
+}
+
+/* Navigation */
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 15px;
+  font-size: 14px;
+}
+
+.nav-links a:hover {
+  color: #a0b3ff;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+   <a href="products.html"> <div class="left">&#171;</div></a>
+    <div class="center">BLUEBELL<br><small>PC & ACCESSORIES</small></div>
+    <div class="right">&#128267;</div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main">
+
+    <!-- LEFT -->
+    <div class="left-section">
+        <div class="shape"></div>
+        <!-- <img src="https://pngimg.com/uploads/laptop/laptop_PNG5936.png" alt="Laptop"> -->
+         <img src="photo/mac.jpg" alt="">
+    </div>
+
+    <div class="arrow-btn"><a href="product2.html">&#8594;</a></div>
+
+    <!-- RIGHT -->
+    <div class="right-section">
+        <div class="stars">★★★★★</div>
+        <div class="title">Mac book 2019</div>
+        <div class="price">$270</div>
+
+        <div class="details">
+            <h3>Details</h3>
+            <p>
+                MacBook Air and the 13-inch and 15-inch MacBook Pro models,
+                and finally replacing the 15-inch model with an all-new
+                16-inch MacBook Pro.
+                <br><br>
+                These were among the last major Mac laptops to use Intel
+                processors before Apple began transitioning to its own silicon.
+            </p>
+
+            <div class="buttons">
+                <button class="btn btn-outline">Add to Cart</button>
+                <button class="btn btn-filled">Buy Now</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Bottom Navigation -->
+<div class="bottom-nav">
+  <div><a href="home.html">🏠</a></div>
+  <div>❤</div>
+  <div>📄</div>
+  <div>👤</div>
+</div>
+
+<div class="cart-btn">🛍</div>
+</body>
+</html>

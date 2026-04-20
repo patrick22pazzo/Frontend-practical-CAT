@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>About Us - Bluebell</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f2f2f2;
+}
+
+/* Header */
+.header {
+  background: #0a1a6b;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+}
+
+.logo h2 {
+  font-size: 16px;
+}
+
+.logo small {
+  font-size: 10px;
+}
+
+/* Navigation */
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 15px;
+  font-size: 14px;
+}
+
+.nav-links a:hover {
+  color: #a0b3ff;
+}
+
+/* Page Title */
+.title {
+  text-align: center;
+  padding: 20px;
+  font-size: 22px;
+  color: #333;
+}
+
+/* About Section */
+.about-container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+.about-card {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+.about-card h3 {
+  color: #0a1a6b;
+  margin-bottom: 10px;
+}
+
+.about-card p {
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Team Section */
+.team {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 15px;
+}
+
+.member {
+  background: white;
+  padding: 15px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.member img {
+  width: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.member h4 {
+  margin: 5px 0;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 15px;
+  background: #0a1a6b;
+  color: white;
+  margin-top: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Header -->
+<div class="header">
+  <div class="logo">
+    <h2>BLUEBELL</h2>
+    <small>PC & ACCESSORIES</small>
+  </div>
+
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html" class="active">About</a>
+    <a href="products.html">Products</a>
+    <a href="cart.html">Cart</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</div>
+
+<!-- Title -->
+<div class="title">About Us</div>
+
+<!-- Content -->
+<div class="about-container">
+
+  <div class="about-card">
+    <h3>Who We Are</h3>
+    <p>
+      Bluebell is a technology company specializing in high-quality laptops,
+      accessories, and digital solutions. We aim to provide reliable and affordable
+      tech products to individuals and businesses.
+    </p>
+  </div>
+
+  <div class="about-card">
+    <h3>Our Mission</h3>
+    <p>
+      Our mission is to deliver innovative technology solutions that empower
+      people to work smarter, learn faster, and stay connected in a digital world.
+    </p>
+  </div>
+
+  <div class="about-card">
+    <h3>Why Choose Us</h3>
+    <p>
+      ✔ Quality products from trusted brands <br>
+      ✔ Affordable pricing <br>
+      ✔ Excellent customer support <br>
+      ✔ Fast and secure service
+    </p>
+  </div>
+
+  <!-- Team -->
+  <div class="about-card">
+    <h3>Our Team</h3>
+
+    <div class="team">
+      <div class="member">
+        <img src="user1.png">
+        <h4>Patrick</h4>
+        <p>Founder</p>
+      </div>
+
+      <div class="member">
+        <img src="user2.png">
+        <h4>John</h4>
+        <p>Manager</p>
+      </div>
+
+      <div class="member">
+        <img src="user3.png">
+        <h4>Sarah</h4>
+        <p>Support</p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  © 2026 Bluebell. All rights reserved.
+</div>
+
+</body>
+</html>

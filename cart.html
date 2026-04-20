@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cart - Bluebell</title>
+
+<style>
+body {
+  font-family: Arial;
+  background: #f2f2f2;
+  margin: 0;
+}
+
+/* Header */
+.header {
+  background: #0a1a6b;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+/* Cart Container */
+.cart-container {
+  padding: 20px;
+}
+
+/* Item */
+.cart-item {
+  background: white;
+  padding: 15px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cart-item img {
+  width: 80px;
+}
+
+.details {
+  flex: 1;
+  margin-left: 10px;
+}
+
+.details h4 {
+  margin: 0;
+}
+
+.price {
+  color: #0a1a6b;
+  font-weight: bold;
+}
+
+/* Quantity */
+.qty {
+  display: flex;
+  align-items: center;
+}
+
+.qty button {
+  padding: 5px 10px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+/* Remove */
+.remove {
+  color: red;
+  cursor: pointer;
+}
+
+/* Total */
+.total {
+  background: white;
+  padding: 15px;
+  border-radius: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Checkout */
+.checkout {
+  width: 100%;
+  padding: 15px;
+  background: #0a1a6b;
+  color: white;
+  border: none;
+  margin-top: 10px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+
+
+
+.logo img{
+    height: 80px;
+    width: 10%;
+}
+small{
+    margin-left: -120px;
+}
+
+
+
+
+/* Header Layout */
+.header {
+  background: #0a1a6b;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  flex-wrap: wrap;
+}
+
+/* Logo */
+.logo h2 {
+  font-size: 16px;
+}
+
+.logo small {
+  font-size: 10px;
+}
+
+/* Navigation */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  position: relative;
+  transition: 0.3s;
+}
+
+/* Hover effect */
+.nav-links a:hover {
+  color: #a0b3ff;
+}
+
+/* Active page */
+.nav-links .active {
+  border-bottom: 2px solid white;
+  padding-bottom: 3px;
+}
+
+/* Responsive (mobile) */
+@media (max-width: 768px) {
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
+
+
+.button {
+  /* margin-top: 10px; */
+  padding: 7px;
+  background: #0a1a6b;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+
+</style>
+</head>
+
+<body>
+
+  <div class="header">
+  <!-- <div class="icon">☰</div> -->
+
+  <div class="logo">
+    <!-- <h2>BLUEBELL</h2> -->
+    <!-- <img src="photo/logo.png" alt=""> -->
+    <small>PC & ACCESSORIES</small>
+
+
+      <!-- Navigation -->
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="About.html">About Us</a>
+    <a href="products.html" >Products</a>
+    <a href="cart.html"  class="active">Cart</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  </div>
+
+  <div class="icon">🔍</div>
+</div>
+
+<div class="header">
+  <h2>Your Cart</h2>
+</div>
+
+<div class="cart-container" id="cart"></div>
+
+<div class="cart-container">
+  <div class="total" id="total">Total: $0</div>
+  <button class="checkout">Checkout</button>
+</div>
+
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+/* Display Cart */
+function displayCart() {
+  const cartDiv = document.getElementById("cart");
+  cartDiv.innerHTML = "";
+  let total = 0;
+
+  cart.forEach((item, index) => {
+    total += item.price * item.qty;
+
+    cartDiv.innerHTML += `
+      <div class="cart-item">
+        <img src="${item.image}">
+        <div class="details">
+          <h4>${item.name}</h4>
+          <div class="price">$${item.price}</div>
+        </div>
+
+        <div class="qty">
+          <button onclick="changeQty(${index}, -1)">-</button>
+          ${item.qty}
+          <button onclick="changeQty(${index}, 1)">+</button>
+        </div>
+
+        <div class="remove" onclick="removeItem(${index})">✖</div>
+      </div>
+    `;
+  });
+
+  document.getElementById("total").innerText = "Total: $" + total;
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+/* Change Quantity */
+function changeQty(index, change) {
+  cart[index].qty += change;
+  if (cart[index].qty <= 0) cart.splice(index, 1);
+  displayCart();
+}
+
+/* Remove Item */
+function removeItem(index) {
+  cart.splice(index, 1);
+  displayCart();
+}
+
+displayCart();
+</script>
+
+
+</body>
+</html>

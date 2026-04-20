@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Bluebell Store</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f2f2f2;
+}
+
+/* Header */
+.header {
+  background: #0a1a6b;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+
+.header .logo {
+  text-align: center;
+  flex: 1;
+}
+
+.header h2 {
+  font-size: 14px;
+}
+
+.header .icon {
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* Title */
+.title {
+  text-align: center;
+  padding: 10px;
+  font-size: 18px;
+  color: #555;
+}
+
+/* Brand Buttons */
+.brands {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  /* margin-left: 500px; */
+}
+
+.brand {
+  background: white;
+  width: 80px;
+  height: 70px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  font-weight: bold;
+  font-size: 18px;
+  margin-left: 22px;
+}
+
+.brand img{
+    width: 100%;
+  border-radius: 15px;
+  height: 60px;
+
+}
+
+/* Products */
+.products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  padding: 15px;
+}
+
+.card {
+  background: white;
+  border-radius: 20px;
+  padding: 10px;
+  position: relative;
+  width: 90%;
+  height: 40vh;
+  border: 1px solid #0a1a6b;
+}
+
+.card img {
+  width: 90%;
+  height: 25vh;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.heart {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: red;
+}
+
+.card h4 {
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+.price {
+  color: #0a1a6b;
+  font-weight: bold;
+  margin-top: 3px;
+}
+
+.stars {
+  color: gold;
+  font-size: 12px;
+}
+
+/* Floating Cart Button */
+.cart-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  border: 5px solid #0a1a6b;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+/* Bottom Nav */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: white;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  border-top: 2px solid #ddd;
+}
+
+.bottom-nav div {
+  font-size: 22px;
+  color: #555;
+}
+
+.logo img{
+    height: 80px;
+    width: 10%;
+}
+small{
+    margin-left: -120px;
+}
+
+
+
+
+/* Header Layout */
+.header {
+  background: #0a1a6b;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  flex-wrap: wrap;
+}
+
+/* Logo */
+.logo h2 {
+  font-size: 16px;
+}
+
+.logo small {
+  font-size: 10px;
+}
+
+/* Navigation */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  position: relative;
+  transition: 0.3s;
+}
+
+/* Hover effect */
+.nav-links a:hover {
+  color: #a0b3ff;
+}
+
+/* Active page */
+.nav-links .active {
+  border-bottom: 2px solid white;
+  padding-bottom: 3px;
+}
+
+/* Responsive (mobile) */
+@media (max-width: 768px) {
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
+
+
+.button {
+  /* margin-top: 10px; */
+  padding: 7px;
+  background: #0a1a6b;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<!-- Header -->
+<div class="header">
+  <!-- <div class="icon">☰</div> -->
+
+  <div class="logo">
+    <!-- <h2>BLUEBELL</h2> -->
+    <img src="photo/logo.png" alt="">
+    <small>PC & ACCESSORIES</small>
+
+
+      <!-- Navigation -->
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="About.html">About Us</a>
+    <a href="products.html"  class="active">Products</a>
+    <a href="cart.html">Cart</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  </div>
+
+  <div class="icon">🔍</div>
+</div>
+
+<!-- Title -->
+<div class="title">Choose Our Brands</div>
+
+<!-- Brands -->
+<div class="brands">
+  <div class="brand"><img src="photo/HP.png" alt=""></div>
+  <div class="brand"><img src="photo/Apple.png" alt=""></div>
+  <div class="brand"><img src="photo/dell.png" alt=""></div>
+</div>
+
+<!-- Products -->
+<div class="products">
+
+  <div class="card">
+    <div class="heart">❤</div>
+   <a href="product1.html"> <img src="photo/mac.jpg"></a>
+    <h4>Mac book air</h4>
+    <div class="price">$220</div>
+    <div class="stars">★★★★★</div>
+       <button class="button" onclick="addToCart('MacBook Air', 270, 'laptop1.png')">
+      Add to Cart
+</button>
+  </div>
+
+  <div class="card">
+    <div class="heart">❤</div>
+    <a href="product2.html"><img src="photo/hp.jpg"></a>
+    <h4>Hp Elite book</h4>
+    <div class="price">$210</div>
+    <div class="stars">★★★★★</div>
+
+         <button class="button" onclick="addToCart('  HP Elite book', 270, 'laptop2.png')">
+      Add to Cart
+</button>
+  </div>
+
+  <div class="card">
+    <div class="heart">❤</div>
+    <a href="product3.html"><img src="photo/dell.jpg"></a>
+    <h4>Dell Vostro</h4>
+    <div class="price">$290</div>
+    <div class="stars">★★★★★</div>
+
+         <button class="button" onclick="addToCart('Dell Vostro', 270, 'laptop3.png')">
+      Add to Cart
+</button>
+  </div>
+
+  <div class="card">
+    <div class="heart">❤</div>
+    <a href="product4.html"><img src="photo/pc2.jpg"></a>
+    <h4>Hp Zbook</h4>
+    <div class="price">$270</div>
+    <div class="stars">★★★★★</div>
+
+         <button class="button" onclick="addToCart('Hp Zbook', 270, 'laptop4.png')">
+      Add to Cart
+</button>
+  </div>
+
+<!-- ************************************************************************************* -->
+
+    <div class="card">
+    <div class="heart">❤</div>
+    <a href="#"><img src="photo/hp.jpg"></a>
+    <h4>Dell Vostro</h4>
+    <div class="price">$290</div>
+    <div class="stars">★★★★★</div>
+
+         <button class="button" onclick="addToCart('MacBook Air', 270, 'laptop1.png')">
+      Add to Cart
+</button>
+  </div>
+
+    <div class="card">
+    <div class="heart">❤</div>
+    <a href="#"><img src="photo/dell.jpg"></a>
+    <h4>Dell Vostro</h4>
+    <div class="price">$200</div>
+    <div class="stars">★★★★★</div>
+
+         <button class="button" onclick="addToCart('MacBook Air', 270, 'laptop1.png')">
+      Add to Cart
+</button>
+  </div>
+
+    <div class="card">
+    <div class="heart">❤</div>
+    <a href="#"><img src="photo/mac.jpg"></a>
+    <h4>Dell Vostro</h4>
+    <div class="price">$271</div>
+    <div class="stars">★★★★★</div>
+
+         <button class="button" onclick="addToCart('MacBook Air', 270, 'laptop1.png')">
+      Add to Cart
+</button>
+  </div>
+
+    <div class="card">
+    <div class="heart">❤</div>
+    <a href="#"><img src="photo/dell.jpg"></a>
+    <h4>Dell Vostro</h4>
+    <div class="price">$270</div>
+
+    <div class="stars">★★★★★</div>
+
+             <button class="button" onclick="addToCart('MacBook Air', 270, 'laptop1.png')">
+      Add to Cart
+</button>
+
+  </div>
+  <br><br><br>
+
+
+  
+</div>
+
+<!-- Floating Cart -->
+
+<!-- Bottom Navigation -->
+<div class="bottom-nav">
+  <div>🏠</div>
+  <div>❤</div>
+  <div>📄</div>
+  <div>👤</div>
+</div>
+
+<div class="cart-btn">🛍</div>
+
+
+<script>
+function addToCart(name, price, image) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  let existing = cart.find(item => item.name === name);
+
+  if (existing) {
+    existing.qty++;
+  } else {
+    cart.push({ name, price, image, qty: 1 });
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  alert(name + " added to cart!");
+}
+</script>
+
+</body>
+</html>

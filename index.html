@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bluebell Tech</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #0a1a6b;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      width: 320px;
+      height: 600px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px 20px;
+    }
+
+    .logo {
+      text-align: center;
+      color: white;
+    }
+
+    .logo h1 {
+      font-size: 18px;
+      letter-spacing: 2px;
+    }
+
+    .logo p {
+      font-size: 10px;
+      color: #a0b3ff;
+    }
+
+    .tagline {
+      font-size: 16px;
+      margin-top: 10px;
+      color: #dce3ff;
+    }
+
+    .image-section img {
+      width: 260px;
+    }
+
+    /* Swipe Button */
+    .swipe-container {
+      width: 100%;
+      border: 2px solid #ffffff55;
+      border-radius: 30px;
+      height: 50px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .swipe-text {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      line-height: 50px;
+      color: white;
+      font-size: 12px;
+      pointer-events: none;
+    }
+
+    .swipe-circle {
+      width: 45px;
+      height: 45px;
+      background: white;
+      border-radius: 50%;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #0a1a6b;
+      font-weight: bold;
+      cursor: pointer;
+      transition: left 0.3s ease;
+    }
+
+    .swipe-circle::after {
+      content: ">";
+    }
+
+
+    /* Header Layout */
+.header {
+  background: #0a1a6b;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  flex-wrap: wrap;
+}
+
+/* Logo */
+.logo h2 {
+  font-size: 16px;
+}
+
+.logo small {
+  font-size: 10px;
+}
+
+/* Navigation */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  position: relative;
+  transition: 0.3s;
+}
+
+/* Hover effect */
+.nav-links a:hover {
+  color: #a0b3ff;
+}
+
+/* Active page */
+.nav-links .active {
+  border-bottom: 2px solid white;
+  padding-bottom: 3px;
+}
+
+/* Responsive (mobile) */
+@media (max-width: 768px) {
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="logo">
+      <h1>BLUEBELL</h1>
+      <p>PC & ACCESSORIES</p>
+      <div class="tagline">Technology Solution</div>
+    </div>
+
+    <div class="image-section">
+      <img src="photo/logo.png" alt="Laptop">
+    </div>
+
+
+
+      <!-- Navigation -->
+  <!-- <nav class="nav-links">
+    <a href="home.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="products.html">Products</a>
+    <a href="cart.html">Cart</a>
+    <a href="contact.html" class="active">Contact</a>
+  </nav>
+
+</div> -->
+
+
+    <!-- Swipe Button -->
+    <div class="swipe-container" id="swipe">
+    <a href="products.html"> <div class="swipe-text">SWIPE TO ACCESS</div>
+      <div class="swipe-circle" id="circle"></div></a> 
+    </div>
+
+  </div>
+
+  <script>
+    const circle = document.getElementById("circle");
+    const swipe = document.getElementById("swipe");
+
+    let isDragging = false;
+
+    circle.addEventListener("mousedown", () => isDragging = true);
+    document.addEventListener("mouseup", () => isDragging = false);
+
+    document.addEventListener("mousemove", (e) => {
+      if (!isDragging) return;
+
+      const rect = swipe.getBoundingClientRect();
+      let offset = e.clientX - rect.left;
+
+      if (offset < 0) offset = 0;
+      if (offset > rect.width - 50) offset = rect.width - 50;
+
+      circle.style.left = offset + "px";
+
+      // If reached end → navigate
+      if (offset >= rect.width - 50) {
+        window.location.href = "home.html"; // 🔁 change to your page
+      }
+    });
+
+    // Touch support (mobile)
+    circle.addEventListener("touchstart", () => isDragging = true);
+    document.addEventListener("touchend", () => isDragging = false);
+
+    document.addEventListener("touchmove", (e) => {
+      if (!isDragging) return;
+
+      const rect = swipe.getBoundingClientRect();
+      let offset = e.touches[0].clientX - rect.left;
+
+      if (offset < 0) offset = 0;
+      if (offset > rect.width - 50) offset = rect.width - 50;
+
+      circle.style.left = offset + "px";
+
+      if (offset >= rect.width - 50) {
+        window.location.href = "home.html"; // 🔁 change this
+      }
+    });
+  </script>
+
+</body>
+</html>
